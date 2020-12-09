@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --body-font-size: 1.6rem;
+    --body-font-color: #5f5f5f;
+    --body-font-family: 'Open Sans', sans-serif;
+    --heading-font-family: 'Playfair Display', sans-serif;
+    --light-color: #f7e1d7;
+    --dark-color: #d35d6e;
+    --light-gray-color: #f2f3f7;
+    --orange-color: #ec5453;
+    --blue-color: #2c98f0;
+    --yellow-color: #f9bf3f;
+    --purple-color: #a84cb8;
+    --dark-blue-color: #4054b2;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: var(--body-font-family);
+    color: var(--body-font-color);
+    font-size: var(--body-font-size);
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+.hamburger-menu{
+    display: none;
+}
+.nav{
+    width: 26rem;
+    height: 100vh;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+.intro{
+    font-family: var(--heading-font-family);
+    text-align: center;
+    margin: 5rem 0;
+    line-height: 1.5;
+}
+.intro-heading{
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+.intro-subheading{
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+.nav-list{
+    list-style: none;
+}
+.nav-item{
+    position: relative;
+}
+.nav-item::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,182,193);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s cubic-bezier(0.83, 0, 0.17, 1);
+
+}
+.nav-item:hover::before{
+    transform: scaleX(1);
+}
+.nav-item:not(:last-child){
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-link{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--light-color);
+    padding: 1rem;
+}
+.social-media-wrapper{
+    margin-top: auto;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.social-media-wrapper span{
+    display: block;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+.social-media{
+    display: flex;
+    justify-content: center;
+}
+.sm-link{
+    font-size: 2.4rem;
+    color: var(--light-color);
+    transition: color 0.5s,transform 0.5s;
+}
+.sm-link:hover{
+    color:white;
+    transform: translateY(-3px);
+}
+.sm-link:nth-child(2){
+    margin: 0 2rem;
+}
+.copyright-notice{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: whitesmoke;
+
+}
+.main{
+    width: calc(100%-26rem);
+    transform: translateX(26rem);
+}
+section:not(.hero){
+    padding: 5rem 0;
+}
+.hero{
+    height: 100vh;
+    background: url("images/paper-1074131_1920.jpg") bottom center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.hero-heading{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12vw;
+    font-family: var(--heading-font-family);
+    color: var(--light-color);
+    z-index: 1;
+    user-select: none;
+}
+.hero-image{
+    max-width: 95%;
+    user-select: none;
+    -webkit-user-drag: none;
+    position: relative;
+    z-index: 2;
+}
+.scroll-down{
+    position: absolute;
+    bottom: .6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+}
+.mouse{
+    height: 5rem;
+    width: 2.5rem;
+    border: 2px solid white;
+    border-radius: 2rem;
+    display: flex;
+}
+.mouse span{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-color: white;
+    border-radius: 50%;
+    margin: auto;
+    animation: move-wheel 1s linear infinite;
+}
+.arrow span{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    animation: arrow-down 1s linear infinite;
+}
+@keyframes move-wheel{
+    0%{
+        opacity: 1;
+        transform: translateY(-1rem);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+}
+@keyframes arrow-down{
+    0%{
+        opacity: 0;
+       
+    }
+    25%{
+        opacity: .25;
+    }
+    50%{
+        opacity: .5;
+    }
+    75%{
+        opacity: .75;
+    }
+    100%{
+        opacity: 1;
+        
+    }
+}
