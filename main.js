@@ -16,7 +16,7 @@ navList.addEventListener('click',function(e){
      }
 });
 
-Window.addEventListener('click',function(e){
+window.addEventListener('click',function(e){
     let clickedElement = e.target;
     if(clickedElement.matches('.is-open')){
         bodyelement.classList.remove('is-open');
